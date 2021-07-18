@@ -12,9 +12,9 @@ const DB_URL = `mongodb://localhost/${DB_NAME}` || process.env.MONGODB_URI;
 
 const MONGOOSE_OPTIONS = {
   useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: true,
   useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
 };
 
 mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
