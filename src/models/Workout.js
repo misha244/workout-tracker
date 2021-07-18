@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
-const modelSchema = {
+
+const workoutSchema = {
   day: Date,
   exercises: [
     {
@@ -14,9 +16,10 @@ const modelSchema = {
       weight: Number,
       reps: Number,
       sets: Number,
+      distance: Number,
     },
   ],
 };
-const ModelSchema = new Schema();
-const ModelName = mongoose.model("ModelName", ModelSchema);
-module.exports = ModelName;
+const WorkoutSchema = new Schema(workoutSchema);
+const Workout = mongoose.model("workout", WorkoutSchema);
+module.exports = Workout;
