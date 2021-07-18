@@ -5,7 +5,17 @@ const getWorkouts = async (req, res) => {
   res.json(workouts);
 };
 
-const continueWorkout = async (req, res) => {};
+const continueWorkout = async (req, res) => {
+  const { id } = req.params;
+
+  const data = await Workout.findByIdAndUpdate(id, {
+    $push: {
+      exercises: req.body,
+    },
+  });
+
+  res.json(data);
+};
 
 const createWorkout = async (req, res) => {
   const { name, type, duration, weight, reps, sets, distance } = req.body;
