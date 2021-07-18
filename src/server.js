@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const path = require("path");
+const logger = require("morgan");
 
 const routes = require("./routes/index");
 
@@ -20,7 +20,7 @@ const MONGOOSE_OPTIONS = {
 mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
 
 const app = express();
-app.use(express.static(path.join(__dirname, "./src/public")));
+app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
