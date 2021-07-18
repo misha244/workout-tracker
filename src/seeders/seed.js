@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 const { DB_URL, MONGOOSE_OPTIONS } = require("../server");
 
-mongoose.connect(DB_URL, MONGOOSE_OPTIONS));
+mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
 
 const workoutSeed = [
   {
@@ -132,4 +132,3 @@ db.Workout.deleteMany({})
     console.error(err);
     process.exit(1);
   });
-
