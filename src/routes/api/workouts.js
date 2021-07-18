@@ -10,5 +10,6 @@ const router = Router();
 
 router.get("/", getWorkouts);
 router.post("/", createWorkout);
+router.put("/:id", continueWorkout);
 
 module.exports = router;
