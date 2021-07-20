@@ -26,5 +26,5 @@ app.use(express.json());
 app.use(routes);
 
 app.listen(PORT, () => {
-  console.log("App currently running on http://localhost:3000");
+  console.log("App currently running on server http://localhost:3000");
 });
