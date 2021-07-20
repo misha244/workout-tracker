@@ -55,11 +55,11 @@ const createWorkout = async (req, res) => {
   }
 };
 
-//const addExercise = async (req, res) => {};
+const getWorkoutsInRange = async (req, res) => {};
 
 module.exports = {
   getWorkouts,
   continueWorkout,
   createWorkout,
-  //addExercise,
+  getWorkoutsInRange,
 };
