@@ -2,14 +2,17 @@ const { Workout } = require("../../models");
 
 const getWorkouts = async (req, res) => {
   try {
-    const allWorkouts = await Workout.aggregate([
+    const workouts = await Workout.aggregate([
       {
         $addFields: {
-          totalDuration: { $sum: "$workout.duration" },
+          totalDuration: { $sum: "$exercises.duration" },
+          totalDistance: {
+            $sum: "$exercises.distance",
+          },
         },
       },
     ]);
-    res.json(allWorkouts);
+    res.json(workouts);
   } catch (error) {
     console.log(error);
   }
