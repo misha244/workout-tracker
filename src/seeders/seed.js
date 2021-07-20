@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-const { DB_URL, MONGOOSE_OPTIONS } = require("../server");
+const { DB_URL, dbOptions } = require("../server");
 
-mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
+mongoose.connect(DB_URL, dbOptions);
 
 const workoutSeed = [
   {

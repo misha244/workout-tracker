@@ -9,14 +9,14 @@ const PORT = process.env.PORT || 3000;
 const DB_NAME = process.env.DB_NAME || "workout";
 const DB_URL = process.env.MONGODB_URI || `mongodb://localhost/${DB_NAME}`;
 
-const MONGOOSE_OPTIONS = {
+const dbOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: true,
 };
 
-mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
+mongoose.connect(DB_URL, dbOptions);
 
 const app = express();
 
