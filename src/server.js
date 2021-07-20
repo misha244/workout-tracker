@@ -7,7 +7,7 @@ const routes = require("./routes");
 const PORT = process.env.PORT || 3000;
 
 const DB_NAME = process.env.DB_NAME || "workout";
-const DB_URL = `mongodb://localhost/${DB_NAME}` || process.env.MONGODB_URI;
+const DB_URL = process.env.MONGODB_URI || `mongodb://localhost/${DB_NAME}`;
 
 const MONGOOSE_OPTIONS = {
   useNewUrlParser: true,
