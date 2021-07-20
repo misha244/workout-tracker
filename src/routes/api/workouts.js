@@ -3,14 +3,14 @@ const { Router } = require("express");
 const {
   getWorkouts,
   continueWorkout,
-  createWorkout,
+  addWorkout,
   getWorkoutsInRange,
 } = require("../../controllers/api/workout");
 
 const router = Router();
 
 router.get("/", getWorkouts);
-router.post("/", createWorkout);
+router.post("/", addWorkout);
 router.put("/:id", continueWorkout);
 router.get("/range", getWorkoutsInRange);
 

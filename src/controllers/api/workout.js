@@ -30,7 +30,7 @@ const continueWorkout = async (req, res) => {
   }
 };
 
-const createWorkout = async (req, res) => {
+const addWorkout = async (req, res) => {
   const { name, type, duration, weight, reps, sets, distance } = req.body;
   try {
     const workout = {
@@ -80,6 +80,6 @@ const getWorkoutsInRange = async (req, res) => {
 module.exports = {
   getWorkouts,
   continueWorkout,
-  createWorkout,
+  addWorkout,
   getWorkoutsInRange,
 };
