@@ -1,13 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const logger = require("morgan");
+const path = require("path");
 
-const routes = require("./routes/index");
+const routes = require("./routes");
 
 const PORT = process.env.PORT || 3000;
 
 const DB_NAME = process.env.DB_NAME || "workout";
-
 const DB_URL = `mongodb://localhost/${DB_NAME}` || process.env.MONGODB_URI;
 
 const MONGOOSE_OPTIONS = {
@@ -20,13 +19,10 @@ const MONGOOSE_OPTIONS = {
 mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
 
 const app = express();
-app.use(logger("dev"));
 
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.use(express.static("./src/public"));
-
 app.use(routes);
 
 app.listen(PORT, () => {
