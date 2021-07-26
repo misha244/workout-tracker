@@ -1,4 +1,4 @@
-# Title
+# Workout Tracker
 
 ## Project Link
 
@@ -17,8 +17,18 @@ For this project I used starter code to build a workout tracker. The tracker all
 
 ## Installation
 
-To still t
+```
+git clone git@github.com:misha244/workout-tracker.git
+cd workout-tracker
+code .
+npm i
+npm run start
+```
 
 ## Screenshots
+
+![Homepage](/src/public/screenshots/screencapture-1.png)
+![Stats](/src/public/screenshots/screencapture-2.png)
+![Create workout](/src/public/screenshots/screencapture-3.png)
 
 ## Fin
